@@ -1,0 +1,33 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+  <div>
+    <input type="text" placeholder="O que está acontecendo" v-model="input">
+    <button id="b" v-on:click="post">
+      Tweetar
+    </button><br>
+     <input type="text" placeholder="User" v-model="us">
+  </div>
+  <h2 align="center">
+  Posts
+  </h2>
+  <div v-for="tweet in tweets" id="posts">
+    <p id="inf">
+      {{tweet.user}}
+      {{tweet.dt}}
+    </p>
+    <p id="sp">
+      {{tweet.txt}}
+    </p>
+      <div align="center">
+        <label id="like">
+          <input type="radio" name="rgroup" />
+          Like
+        </label>
+        <label id="dislike">
+          <input type="radio" name="rgroup" />
+          Dislike
+      </label>
+    </div>
+  </div>
+</div>
